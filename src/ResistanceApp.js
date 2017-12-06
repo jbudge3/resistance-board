@@ -69,7 +69,10 @@ class ResistanceApp extends Component {
 
         return (
             <div className="ResistanceAppContainer">
+
                 { currentView(this.state.view) }
+                
+                <div className="startOver" onClick={() => {window.location.reload(true)}}>START OVER</div>
             </div>
         );
     }
