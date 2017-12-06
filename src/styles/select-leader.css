@@ -11,7 +11,7 @@
 
 .SelectLeaderContainer__go {
     font-size: 100px;
-    border: 1px solid #d9d9d9;
+    background-color: #d9d9d9;
     border-radius: 50%;
     height: 250px;
     width: 250px;
