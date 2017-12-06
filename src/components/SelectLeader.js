@@ -21,6 +21,7 @@ class SelectLeader extends React.Component {
     render() {
         const goClasses = this.state.showResult ? "SelectLeaderContainer__go hide" : "SelectLeaderContainer__go";
         const resultClasses = this.state.showResult ? "SelectLeaderContainer__result" : "SelectLeaderContainer__result hide";
+        const spyPhaseClasses = this.state.showResult ? "SelectLeaderContainer__spyPhase" : "SelectLeaderContainer__spyPhase hide";
         return (
             <div className="SelectLeaderContainer">
                 <button className={ goClasses } onClick={ this.showResult }>
@@ -31,6 +32,10 @@ class SelectLeader extends React.Component {
                     <div className="SelectLeaderContainer__resultText">Player in position</div>
                     <div className="SelectLeaderContainer__resultNum">{ selectRandomLeader(1, this.props.numPlayers) }</div>
                     <div className="SelectLeaderContainer__resultText">clockwise from position 1</div>
+
+                    <button className={ spyPhaseClasses } onClick={ this.props.startSpyPhase }>
+                        Spy Phase
+                    </button>
                 </div>
 
                 <div className="SelectLeaderContainer__positionOne">

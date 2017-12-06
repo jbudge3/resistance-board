@@ -3,6 +3,7 @@ import './styles/resistance-app.css';
 import Welcome from './components/Welcome';
 import NumPlayers from './components/NumPlayers';
 import SelectLeader from './components/SelectLeader';
+import SpyPhase from './components/SpyPhase';
 
 class ResistanceApp extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class ResistanceApp extends Component {
 
         this.beginGame = this.beginGame.bind(this);
         this.selectLeader = this.selectLeader.bind(this);
+        this.startSpyPhase = this.startSpyPhase.bind(this);
         this.adjustPlayers = this.adjustPlayers.bind(this);
     }
 
@@ -28,6 +30,12 @@ class ResistanceApp extends Component {
     selectLeader() {
         this.setState({
             view: "selectLeader"
+        });
+    }
+
+    startSpyPhase() {
+        this.setState({
+            view: "spyPhase"
         });
     }
 
@@ -61,7 +69,9 @@ class ResistanceApp extends Component {
                 case "numPlayers":
                     return NumPlayers({numPlayers: this.state.numPlayers, adjustPlayers: this.adjustPlayers, selectLeader: this.selectLeader});
                 case "selectLeader":
-                    return <SelectLeader numPlayers={this.state.numPlayers} />;
+                    return <SelectLeader numPlayers={this.state.numPlayers} startSpyPhase={this.startSpyPhase} />;
+                case "spyPhase":
+                    return SpyPhase();
                 default:
                     return Welcome({beginGame: this.beginGame});
             }
@@ -71,7 +81,7 @@ class ResistanceApp extends Component {
             <div className="ResistanceAppContainer">
 
                 { currentView(this.state.view) }
-                
+
                 <div className="startOver" onClick={() => {window.location.reload(true)}}>START OVER</div>
             </div>
         );
