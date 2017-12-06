@@ -4,6 +4,7 @@ import Welcome from './components/Welcome';
 import NumPlayers from './components/NumPlayers';
 import SelectLeader from './components/SelectLeader';
 import SpyPhase from './components/SpyPhase';
+import GameBoard from './components/GameBoard';
 
 class ResistanceApp extends Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class ResistanceApp extends Component {
         this.beginGame = this.beginGame.bind(this);
         this.selectLeader = this.selectLeader.bind(this);
         this.startSpyPhase = this.startSpyPhase.bind(this);
+        this.gameBoard = this.gameBoard.bind(this);
         this.adjustPlayers = this.adjustPlayers.bind(this);
     }
 
@@ -36,6 +38,12 @@ class ResistanceApp extends Component {
     startSpyPhase() {
         this.setState({
             view: "spyPhase"
+        });
+    }
+
+    gameBoard() {
+        this.setState({
+            view: "gameBoard"
         });
     }
 
@@ -71,7 +79,9 @@ class ResistanceApp extends Component {
                 case "selectLeader":
                     return <SelectLeader numPlayers={this.state.numPlayers} startSpyPhase={this.startSpyPhase} />;
                 case "spyPhase":
-                    return SpyPhase();
+                    return SpyPhase({gameBoard: this.gameBoard});
+                case "gameBoard":
+                    return <GameBoard />
                 default:
                     return Welcome({beginGame: this.beginGame});
             }
