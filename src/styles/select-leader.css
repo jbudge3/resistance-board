@@ -1,0 +1,37 @@
+.hide {
+    display: none;
+}
+
+.SelectLeaderContainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SelectLeaderContainer__resultText {
+    font-size: 50px;
+}
+
+.SelectLeaderContainer__resultNum {
+    color: #eb6600;
+    font-size: 200px;
+}
+
+.SelectLeaderContainer__positionOne {
+    border: 2px solid #eb6600;
+    font-size: 50px;
+    position: absolute;
+    bottom: 40px;
+    padding: 10px 20px;
+}
+
+.SelectLeaderContainer__triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid #eb6600;
+    position: absolute;
+    bottom: 12px;
+}

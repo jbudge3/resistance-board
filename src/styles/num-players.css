@@ -1,0 +1,44 @@
+.NumPlayersContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.NumPlayersContainer__prompt {
+    font-size: 50px;
+    margin: 0 0 30px;
+}
+
+.NumPlayersContainer__addSubtract {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+}
+
+.NumPlayersContainer__adjust {
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    color: #2b2b2b;
+    font-size: 150px;
+    padding-bottom: 50px;
+    width: 200px;
+    height: 150px;
+}
+
+.NumPlayersContainer__total {
+    color: #eb6600;
+    font-size: 200px;
+}
+
+.NumPlayersContainer__selectLeader {
+    background-color: #d9d9d9;
+    border-radius: 35px;
+    color: #2b2b2b;
+    font-size: 50px;
+    height: 75px;
+    margin-top: 50px;
+    width: 700px;
+}
