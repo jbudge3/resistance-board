@@ -23,9 +23,9 @@ class SelectLeader extends React.Component {
         const resultClasses = this.state.showResult ? "SelectLeaderContainer__result" : "SelectLeaderContainer__result hide";
         return (
             <div className="SelectLeaderContainer">
-                <div className={ goClasses } onClick={ this.showResult }>
+                <button className={ goClasses } onClick={ this.showResult }>
                     GO
-                </div>
+                </button>
 
                 <div className={ resultClasses }>
                     <div className="SelectLeaderContainer__resultText">Player in position</div>
