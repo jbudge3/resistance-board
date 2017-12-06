@@ -3,7 +3,7 @@
 }
 
 .SelectLeaderContainer {
-    height: 100%;
+    height: calc(100% - 115px);
     display: flex;
     justify-content: center;
     align-items: center;
