@@ -2,6 +2,7 @@
   "name": "resistance-board",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jbudge3.github.io/resistance-board/",
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
