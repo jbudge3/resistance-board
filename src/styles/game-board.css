@@ -53,6 +53,21 @@
     opacity: 0.1;
 }
 
+.GameBoardContainer__bottomInfo {
+    position: absolute;
+    bottom: 25px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.GameBoardContainer__voteTrack {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 25px;
+    align-items: center;
+}
+
 @keyframes altOpacity {
     from {opacity: 1;}
     to {opacity: 0.2;}

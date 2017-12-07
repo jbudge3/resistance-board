@@ -1,0 +1,18 @@
+.VoteNum {
+    border: 2px solid #d9d9d9;
+    border-radius: 50%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+}
+
+.VoteNum:last-of-type {
+    border: 2px solid #eb6600;
+}
+
+.currentVote {
+    background-color: #850077;
+}

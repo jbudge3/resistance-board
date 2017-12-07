@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/game-board.css';
 import Mission from './Mission';
+import Vote from './Vote';
 
 class GameBoard extends React.Component {
     constructor(props) {
@@ -10,11 +11,13 @@ class GameBoard extends React.Component {
             currentMission: 1,
             successful: [],
             failed: [],
-            gameOver: null
+            gameOver: null,
+            voteTrack: 1
         }
 
         this.triggerFail = this.triggerFail.bind(this);
         this.triggerSuccess = this.triggerSuccess.bind(this);
+        this.advanceVoteTrack = this.advanceVoteTrack.bind(this);
     }
 
     showMissions() {
@@ -34,6 +37,31 @@ class GameBoard extends React.Component {
         });
     }
 
+    showVoteTrack() {
+        const voteArr = [1, 2, 3, 4, 5];
+
+        return voteArr.map((vote) => {
+            return (
+                <Vote num={ vote } position={ this.state.voteTrack } />
+            );
+        });
+    }
+
+    advanceVoteTrack() {
+        const currentVoteTrack = this.state.voteTrack;
+        let nextVoteTrack;
+
+        if (currentVoteTrack === 5) {
+            nextVoteTrack = 1;
+        } else {
+            nextVoteTrack = currentVoteTrack + 1;
+        }
+
+        this.setState({
+            voteTrack: nextVoteTrack
+        });
+    }
+
     triggerFail() {
         if (this.state.gameOver) { return; }
 
@@ -42,7 +70,8 @@ class GameBoard extends React.Component {
 
         this.setState({
             failed: newFailed,
-            currentMission: this.state.currentMission + 1
+            currentMission: this.state.currentMission + 1,
+            voteTrack: 1
         });
 
         if (newFailed.length === 3) {
@@ -60,7 +89,8 @@ class GameBoard extends React.Component {
 
         this.setState({
             successful: newSuccessful,
-            currentMission: this.state.currentMission + 1
+            currentMission: this.state.currentMission + 1,
+            voteTrack: 1
         });
 
         if (newSuccessful.length === 3) {
@@ -96,7 +126,14 @@ class GameBoard extends React.Component {
                     </div>
                 </div>
 
-                <div className="GameBoardContainer__voteTrack">
+                <div className="GameBoardContainer__bottomInfo">
+                    <div className="GameBoardContainer__voteTrack">
+                        Vote Track:
+                        { this.showVoteTrack() }
+                    </div>
+                    <button onClick={ this.advanceVoteTrack }>Advance</button>
+                    <div className="GameBoardContainer__numSpies">
+                    </div>
                 </div>
             </div>
         );
