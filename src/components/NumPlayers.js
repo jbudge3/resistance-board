@@ -1,4 +1,5 @@
 import React from 'react';
+import getNumSpies from '../utils/getNumSpies';
 import '../styles/num-players.css';
 
 const NumPlayers = (props) => {
@@ -22,6 +23,9 @@ const NumPlayers = (props) => {
             <button className="NumPlayersContainer__selectLeader" onClick={ props.selectLeader }>
                 Select First Mission Leader
             </button>
+            <div className="NumPlayersContainer__numSpies">
+                { getNumSpies(props.numPlayers) } Spies
+            </div>
 
         </div>
     );

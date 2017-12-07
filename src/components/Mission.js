@@ -16,8 +16,6 @@ const Mission = (props) => {
 
     let numNeeded;
 
-    console.log(props.numPlayers);
-
     switch(props.missionNum) {
         case(1):
             numNeeded = props.numPlayers > 7 ? 3 : 2;

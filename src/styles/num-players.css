@@ -42,3 +42,8 @@
     margin-top: 50px;
     padding: 0 30px;
 }
+
+.NumPlayersContainer__numSpies {
+    margin-top: 25px;
+    font-size: 45px;
+}

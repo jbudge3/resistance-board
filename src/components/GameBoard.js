@@ -1,4 +1,5 @@
 import React from 'react';
+import getNumSpies from '../utils/getNumSpies';
 import '../styles/game-board.css';
 import Mission from './Mission';
 import Vote from './Vote';
@@ -42,7 +43,7 @@ class GameBoard extends React.Component {
 
         return voteArr.map((vote) => {
             return (
-                <Vote num={ vote } position={ this.state.voteTrack } />
+                <Vote num={ vote } position={ this.state.voteTrack } key={ vote.toString() }/>
             );
         });
     }
@@ -131,8 +132,9 @@ class GameBoard extends React.Component {
                         Vote Track:
                         { this.showVoteTrack() }
                     </div>
-                    <button onClick={ this.advanceVoteTrack }>Advance</button>
+                    <button className="GameBoardContainer__button" onClick={ this.advanceVoteTrack }>Advance</button>
                     <div className="GameBoardContainer__numSpies">
+                        { getNumSpies(this.props.numPlayers) } Spies
                     </div>
                 </div>
             </div>
