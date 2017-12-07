@@ -81,7 +81,7 @@ class ResistanceApp extends Component {
                 case "spyPhase":
                     return SpyPhase({gameBoard: this.gameBoard});
                 case "gameBoard":
-                    return <GameBoard />
+                    return <GameBoard numPlayers={this.state.numPlayers} />
                 default:
                     return Welcome({beginGame: this.beginGame});
             }

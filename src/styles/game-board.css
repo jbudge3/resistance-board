@@ -1,0 +1,81 @@
+.GameBoardContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.GameBoardContainer__missions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.GameBoardContainer__resultTriggers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.GameBoardContainer__triggerFail {
+    border: 5px solid #850000;
+    border-radius: 50%;
+    font-size: 15px;
+    height: 96px;
+    width: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0 35px;
+}
+
+.GameBoardContainer__triggerSuccess {
+    border: 5px solid #001885;
+    border-radius: 50%;
+    font-size: 15px;
+    height: 96px;
+    width: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GameBoardContainer__numberedMissions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gameOver {
+    opacity: 0.1;
+}
+
+@keyframes altOpacity {
+    from {opacity: 1;}
+    to {opacity: 0.2;}
+}
+
+.resistanceWins {
+    position: absolute;
+    top: 60px;
+    color: #001885;
+    font-size: 90px;
+    animation-name: altOpacity;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.spiesWin {
+    position: absolute;
+    top: 60px;
+    color: #850000;
+    font-size: 90px;
+    animation-name: altOpacity;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
