@@ -14,6 +14,10 @@ const Mission = (props) => {
         missionClass = "Mission";
     }
 
+    if (props.missionNum === 4 && props.numPlayers > 6) {
+        missionClass += " fourthMission";
+    }
+
     let numNeeded;
 
     switch(props.missionNum) {
