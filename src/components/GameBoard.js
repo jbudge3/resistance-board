@@ -53,7 +53,13 @@ class GameBoard extends React.Component {
         let nextVoteTrack;
 
         if (currentVoteTrack === 5) {
-            nextVoteTrack = 1;
+			if (window.confirm("Spy Victory?")) {
+				this.setState({
+					gameOver: "SPIES WIN!"
+				});
+			} else {
+				nextVoteTrack = 1;
+			}
         } else {
             nextVoteTrack = currentVoteTrack + 1;
         }
